@@ -1,7 +1,7 @@
 # Simple File Reading 3
 # readline() moves the reader forward to the start of the next line, 
 # so when we call readline(), the next line is passed permanently;
-# IMPORTANT:  if we want to store or print the lines without the line breaks
+# IMPORTANT:  if we want to store or print the lines without the line breaks ( the empty space in each line in the previous code)
 # we need to strip the whitespace off of them
 
 inputFile = open("./output/OutputFile.txt", "r")
