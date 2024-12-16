@@ -66,23 +66,23 @@
 def next_move(moves):
   moves_val = 0
   for char in moves:
-    if char in ('J','Q','K'):
+    if char in ('J','Q','K','0'):
       moves_val += 10
     elif char == 'A':
       moves_val += 1
     else:
       moves_val += int(char)
       
-  if moves_val + 10 <= 21: #A already added 1 above, so +10 instead of +11
+  if 'A' in moves and moves_val + 10 <= 21: #A already added 1 above, so +10 instead of +11
     moves_val += 10
   else:
     moves_val
-    
+  
   if moves_val < 17:
     return "Hit"
   elif 21 >= moves_val >= 17:
     return "Stay"
-  elif moves_val >= 21:
+  elif moves_val > 21:
     return "Bust"
     
 #Below are some lines of code that will test your function.
@@ -91,6 +91,8 @@ def next_move(moves):
 #
 #If your function works correctly, this will originally
 #print: Hit, Hit, Stay, and Bust.
+print(next_move("K20"))
+print(next_move("38"))
 print(next_move("A3"))
 print(next_move("A39"))
 print(next_move("A397"))
